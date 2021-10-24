@@ -49,6 +49,10 @@ BigBoss public bigBoss;
   // to store the owner of the NFT and reference it later.
   mapping(address => uint256) public nftHolders;
 
+
+  event CharacterNFTMinted(address sender, uint256 tokenId, uint256 characterIndex);
+  event AttackComplete(uint newBossHp, uint newPlayerHp);
+
   constructor(
     string[] memory characterNames,
     string[] memory characterImageURIs,
@@ -103,6 +107,7 @@ BigBoss public bigBoss;
   function mintCharacterNFT(uint _characterIndex) external {
     // Get current tokenId (starts at 1 since we incremented in the constructor).
     uint256 newItemId = _tokenIds.current();
+    
 
     // The magical function! Assigns the tokenId to the caller's wallet address.
     _safeMint(msg.sender, newItemId);
@@ -125,6 +130,7 @@ BigBoss public bigBoss;
 
     // Increment the tokenId for the next person that uses it.
     _tokenIds.increment();
+    
   }
 
 
@@ -197,6 +203,31 @@ function attackBoss() public {
   // Console for ease.
   console.log("Boss attacked player. New player hp: %s\n", player.hp);
 }
+
+function checkIfUserHasNFT() public view returns (CharacterAttributes memory) {
+  // Get the tokenId of the user's character NFT
+  uint256 userNftTokenId = nftHolders[msg.sender];
+  // If the user has a tokenId in the map, return thier character.
+  if (userNftTokenId > 0) {
+    return nftHolderAttributes[userNftTokenId];
+  }
+  // Else, return an empty character.
+  else {
+    CharacterAttributes memory emptyStruct;
+    return emptyStruct;
+   }
+}
+
+function getAllDefaultCharacters() public view returns (CharacterAttributes[] memory) {
+  return defaultCharacters;
+}
+
+function getBigBoss() public view returns (BigBoss memory) {
+  return bigBoss;
+}
+
+
+
 
 }
 
