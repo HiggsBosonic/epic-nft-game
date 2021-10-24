@@ -8,6 +8,8 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
+// Helper we wrote to encode in Base64
+import "./libraries/Base64.sol";
 
 import "hardhat/console.sol";
 
