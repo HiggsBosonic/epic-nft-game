@@ -98,7 +98,6 @@ BigBoss public bigBoss;
     // More on this in the lesson!
     _tokenIds.increment();
   }
-
   // Users would be able to hit this function and get their NFT based on the
   // characterId they send in!
   function mintCharacterNFT(uint _characterIndex) external {
@@ -127,13 +126,7 @@ BigBoss public bigBoss;
     // Increment the tokenId for the next person that uses it.
     _tokenIds.increment();
   }
-function attackBoss() public {
-  // Get the state of the player's NFT.
-  uint256 nftTokenIdOfPlayer = nftHolders[msg.sender];
-  CharacterAttributes storage player = nftHolderAttributes[nftTokenIdOfPlayer];
-  console.log("\nPlayer w/ character %s about to attack. Has %s HP and %s AD", player.name, player.hp, player.attackDamage);
-  console.log("Boss %s has %s HP and %s AD", bigBoss.name, bigBoss.hp, bigBoss.attackDamage);
-}
+
 
 
 function tokenURI(uint256 _tokenId) public view override returns (string memory) {
@@ -166,5 +159,14 @@ function tokenURI(uint256 _tokenId) public view override returns (string memory)
   
   return output;
 }
+
+function attackBoss() public {
+  // Get the state of the player's NFT.
+  uint256 nftTokenIdOfPlayer = nftHolders[msg.sender];
+  CharacterAttributes storage player = nftHolderAttributes[nftTokenIdOfPlayer];
+  console.log("\nPlayer w/ character %s about to attack. Has %s HP and %s AD", player.name, player.hp, player.attackDamage);
+  console.log("Boss %s has %s HP and %s AD", bigBoss.name, bigBoss.hp, bigBoss.attackDamage);
+}
+
 }
 
