@@ -167,7 +167,7 @@ function attackBoss() public {
 
   console.log("\nPlayer w/ character %s about to attack. Has %s HP and %s AD", player.name, player.hp, player.attackDamage);
   console.log("Boss %s has %s HP and %s AD", bigBoss.name, bigBoss.hp, bigBoss.attackDamage);
-
+  
   // Make sure the player has more than 0 HP.
   require (
     player.hp > 0,
@@ -186,6 +186,16 @@ function attackBoss() public {
   } else {
     bigBoss.hp = bigBoss.hp - player.attackDamage;
   }
+
+  // Allow boss to attack player.
+  if (player.hp < bigBoss.attackDamage) {
+    player.hp = 0;
+  } else {
+    player.hp = player.hp - bigBoss.attackDamage;
+  }
+  
+  // Console for ease.
+  console.log("Boss attacked player. New player hp: %s\n", player.hp);
 }
 
 }
