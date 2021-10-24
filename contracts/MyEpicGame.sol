@@ -97,7 +97,6 @@ contract MyEpicGame is ERC721 {
     // Increment the tokenId for the next person that uses it.
     _tokenIds.increment();
   }
-}
 
 function tokenURI(uint256 _tokenId) public view override returns (string memory) {
   CharacterAttributes memory charAttributes = nftHolderAttributes[_tokenId];
@@ -129,3 +128,6 @@ function tokenURI(uint256 _tokenId) public view override returns (string memory)
   
   return output;
 }
+
+}
+
