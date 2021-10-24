@@ -130,7 +130,7 @@ BigBoss public bigBoss;
 
     // Increment the tokenId for the next person that uses it.
     _tokenIds.increment();
-    
+    emit CharacterNFTMinted(msg.sender, newItemId, _characterIndex);
   }
 
 
@@ -202,6 +202,8 @@ function attackBoss() public {
   
   // Console for ease.
   console.log("Boss attacked player. New player hp: %s\n", player.hp);
+
+  emit AttackComplete(bigBoss.hp, player.hp);
 }
 
 function checkIfUserHasNFT() public view returns (CharacterAttributes memory) {
