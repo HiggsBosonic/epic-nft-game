@@ -159,5 +159,14 @@ function tokenURI(uint256 _tokenId) public view override returns (string memory)
   return output;
 }
 
+function attackBoss() public {
+  // Get the state of the player's NFT.
+  uint256 nftTokenIdOfPlayer = nftHolders[msg.sender];
+  CharacterAttributes storage player = nftHolderAttributes[nftTokenIdOfPlayer];
+  console.log("\nPlayer w/ character %s about to attack. Has %s HP and %s AD", player.name, player.hp, player.attackDamage);
+  console.log("Boss %s has %s HP and %s AD", bigBoss.name, bigBoss.hp, bigBoss.attackDamage);
+}
+
+
 }
 
