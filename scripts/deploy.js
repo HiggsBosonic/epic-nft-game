@@ -1,6 +1,7 @@
+
+
   const main = async () => {
     const gameContractFactory = await hre.ethers.getContractFactory('MyEpicGame');
-    
     const gameContract = await gameContractFactory.deploy(
         ["Amazon", "Barbarian", "Assasin", "Sorceress", "Paladin", "Necromancer", "Druid"],       // Names
         ["https://static.wikia.nocookie.net/diablo_gamepedia/images/9/9c/Amazon.gif/revision/latest?cb=20090419123107", // Images
@@ -17,23 +18,41 @@
         10000, // Boss hp
         50 // Boss attack damage
       );
-  
     await gameContract.deployed();
     console.log("Contract deployed to:", gameContract.address);
   
+    
     let txn;
-    // We only have three characters.
-    // an NFT w/ the character at index 2 of our array.
+    txn = await gameContract.mintCharacterNFT(0);
+    await txn.wait();
+    console.log("Minted NFT #1");
+  
+    txn = await gameContract.mintCharacterNFT(1);
+    await txn.wait();
+    console.log("Minted NFT #2");
+  
     txn = await gameContract.mintCharacterNFT(2);
     await txn.wait();
+    console.log("Minted NFT #3");
   
-    txn = await gameContract.attackBoss();
+    txn = await gameContract.mintCharacterNFT(3);
     await txn.wait();
-  
-    txn = await gameContract.attackBoss();
+    console.log("Minted NFT #4");
+
+    txn = await gameContract.mintCharacterNFT(4);
     await txn.wait();
+    console.log("Minted NFT #5");
+
+    txn = await gameContract.mintCharacterNFT(5);
+    await txn.wait();
+    console.log("Minted NFT #6");
+
+    txn = await gameContract.mintCharacterNFT(6);
+    await txn.wait();
+    console.log("Minted NFT #7");
   
-    console.log("Done!");
+    console.log("Done deploying and minting!");
+  
   };
   
   const runMain = async () => {
