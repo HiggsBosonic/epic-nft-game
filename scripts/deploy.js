@@ -21,37 +21,6 @@
     await gameContract.deployed();
     console.log("Contract deployed to:", gameContract.address);
   
-    
-    let txn;
-    txn = await gameContract.mintCharacterNFT(0);
-    await txn.wait();
-    console.log("Minted NFT #1");
-  
-    txn = await gameContract.mintCharacterNFT(1);
-    await txn.wait();
-    console.log("Minted NFT #2");
-  
-    txn = await gameContract.mintCharacterNFT(2);
-    await txn.wait();
-    console.log("Minted NFT #3");
-  
-    txn = await gameContract.mintCharacterNFT(3);
-    await txn.wait();
-    console.log("Minted NFT #4");
-
-    txn = await gameContract.mintCharacterNFT(4);
-    await txn.wait();
-    console.log("Minted NFT #5");
-
-    txn = await gameContract.mintCharacterNFT(5);
-    await txn.wait();
-    console.log("Minted NFT #6");
-
-    txn = await gameContract.mintCharacterNFT(6);
-    await txn.wait();
-    console.log("Minted NFT #7");
-  
-    console.log("Done deploying and minting!");
   
   };
   
