@@ -8,7 +8,7 @@
       "https://imgur.com/n23oH24",
       "https://imgur.com/jZ0ZDtq",
       "https://imgur.com/IGw3hwD",
-      "https://imgur.com/2EXdZdJ",
+      "https://imgur.com/2EXdZdJ"
     ],
       [150, 500, 300, 150, 400],                    // HP values
       [100, 25, 50, 100, 35],                       // Attack damage values
