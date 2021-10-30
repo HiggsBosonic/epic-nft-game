@@ -150,7 +150,7 @@ function tokenURI(uint256 _tokenId) public view override returns (string memory)
           charAttributes.name,
           ' -- NFT #: ',
           Strings.toString(_tokenId),
-          '", "description": "This is an NFT that lets people play in the game Metaverse D2!", "image": "',
+          '", "description": "This is an NFT that lets people play in the game Cats vs Racoons!", "image": "',
           charAttributes.imageURI,
           '", "attributes": [ { "trait_type": "Health Points", "value": ',strHp,', "max_value":',strMaxHp,'}, { "trait_type": "Attack Damage", "value": ',
           strAttackDamage,'} ]}'
