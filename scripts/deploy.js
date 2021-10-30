@@ -1,17 +1,20 @@
  const main = async () => {
     const gameContractFactory = await hre.ethers.getContractFactory('MyEpicGame');
     const gameContract = await gameContractFactory.deploy(
-      ["Sus", "Chill Ginger", "Orange Duo", "Eyes Cat", "Rach Bro's"],       // Names
-      ["https://i.imgur.com/UXcZH3q.jpg",
-      "https://i.imgur.com/n23oH24.jpg",
-      "https://i.imgur.com/jZ0ZDtq.jpg",
-      "https://i.imgur.com/IGw3hwD.jpg",
-      "https://i.imgur.com/2EXdZdJ.jpg",
+      ["Orange Duo", "Sus Cat", "Chill Cat", "Sleepy Cat", "Seen Some Things Cat", "Eyes Cat", "Kitten Gang", "Rach Bro's"],       // Names
+      ["Qma9Kw9JWeY91QHWn91jJ1TX84b4ZhAk21YzcL1YMWbjYu",
+      "QmTvDk69xhh6zWweisXKw6CQcZuDKohTAwjf6ZTHLASn66",
+      "Qmcf3oPf8kY87rme98gSyPagCU3AeC4Qr3mCRYYaGTiyii",
+      "QmevcztcDvTVhKUuyNVCXLmWkSa1ppP2ujtbaPxN7L2QjJ",
+      "QmR8dFkBMAgsFqMerk8Spdxp9Vu5GnZbXANXpKec2GGmRS",
+      "Qmao7vLBdj1Vo46hy5x8AQ7o85vkB1esA4n1Em6QTiy15Y",
+      "QmUhpjZPDVFv7qqTfoSc6kx8nRcqiU54f2qwhu8ePHnvZ5",
+      "QmPwXStKBx6RMtVgje72LBQtCozMYx5ZVWbf2vWCyzBMRf",
     ],
-      [150, 500, 300, 150, 400],                    // HP values
-      [100, 25, 50, 100, 35],                       // Attack damage values
+      [150, 500, 300, 150, 400, 500, 300, 400],                    // HP values
+      [100, 25, 50, 100, 35, 25, 50, 100],                       // Attack damage values
       "Racooon Boss", // Boss name
-      "https://i.imgur.com/G5BiEQm.jpg", // Boss image
+      "QmTwMoByYR49BZsH73HtPD6U1jMEmCdxVMjYob9MQxnWrL", // Boss image
       500, // Boss hp
       50 // Boss attack damage
     );
